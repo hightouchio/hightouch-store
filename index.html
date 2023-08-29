@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <link rel="shortcut icon" href="/favicon.ico"/>
+<script type="text/javascript">
+  !function(){var e=window.hightouchevents=window.hightouchevents||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits","startSession","endSession"],e.factory=function(t){return function(){e.push([t].concat(Array.prototype.slice.call(arguments)))}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://d1xt4zx4uzh8tq.cloudfront.net/v0.1/events.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
+  e.load("c5f703f92e700ff1cd98b5e3710101b98f294f27d11642c78d5203108752ec77","https://events.us-east-1.hightouch.com",{getSourceConfig:function(){return {source:{id:"eb311528-9417-4c45-a2df-46aaf0ff413d",config:{},destinations:[],writeKey:"c5f703f92e700ff1cd98b5e3710101b98f294f27d11642c78d5203108752ec77"}}}}),
+  e.page()}();
+</script>
+</head>
+<body>
+<h1>Hightouch Giraffe</h1>
+<img src="https://cdn3.volusion.com/9nxdj.fchy5/v/vspfiles/photos/FA-A66319-2.jpg?v-cache=1673333887" width="350px"><br><br>
+<button id="button1" onclick="button1()">View Details</button><br>
+<div id="button2" style="visibility:hidden;"><p>Ellie is a beautiful and friendly giraffe.</p><button onclick='button2()'>Add to Cart</button><br><br></div>
+<form style="visibility:hidden;" id="form" onsubmit="form(event)">
+  <label for="fname">Name: </label><input type="text" id="fname" name="fname" required><br><br>
+  <label for="mobile">Phone Number: </label><input type="text" id="mobile" name="mobile" required><br><br><input type="submit" value="Checkout">
+</form>
+
+<script type="text/javascript">
+function button1() {
+    hightouchevents.track('Product Details Viewed');
+    document.getElementById("button2").style.visibility="visible";
+}
+function button2() {
+    hightouchevents.track('Product Added');
+    document.getElementById("form").style.visibility="visible";
+}
+function form(e){
+  window.alert("Thank you!!")
+  hightouchevents.track("Order Completed")
+  hightouchevents.identify({
+    first_name: e.target.elements.fname.value,
+    mobile: e.target.elements.mobile.value
+    });
+}
+</script>
+</body>
+</html>
