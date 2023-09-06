@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       addedText.remove();
     }, 2000);
+
+    alert("Added to cart");
   }
 });
 
